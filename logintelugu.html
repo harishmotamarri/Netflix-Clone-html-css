@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netflix India - టీవీ షోలు చూడండి</title>
+<link rel="icon" href="icon.png">
+<style>
+          body{
+            background-image: url("loginpage1.jpg");
+            background-repeat: no-repeat;
+            background-position: top;
+            margin:0;
+            background-size: cover;
+            background-position-x: center;
+            color: white;
+        }
+        .backdim{
+            background: rgba(33, 32, 32, 0.915);
+            min-height: 100vh;
+      }
+        .top{
+            color: red;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 40px; 
+            font-weight: bold;
+            letter-spacing: 2px;
+            float: left;
+            margin-left: 80px;
+        }
+        .navbar{
+              justify-content: space-between;
+              display: flex;
+              align-items: center;
+              padding: 20px 50px
+        }
+        .dropdwn{
+            position:relative;
+            display: inline-block;
+            font-size: 20px;
+        }
+        .dropbtn{
+            font-size: 16px;
+            padding: 8px 15px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+        .dropdwn:hover{
+            background: rgba(255,255,255,0.2);
+        }
+        .dropcontnt{
+            display: none;
+            position:absolute;
+            background: rgba(0,0,0,0.9);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .dropcontnt h3{
+            margin:5px 0px;
+            color: white;
+            font-size: 14px;
+            cursor:pointer
+        }
+        .dropdwn:hover .dropcontnt{
+            display: block;
+        }
+        .sign {
+            font-size: 16px;
+            padding: 8px 15px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .sign:hover {
+        background: red;
+        color: black;
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style-type: none;
+        }
+
+        .center {
+            text-align: center;
+            margin-top: 100px; 
+        }
+        .center input {
+            padding: 12px;
+            font-size: 25px;
+            width: 300px;
+            max-width: 90%;
+            border: 1px solid rgb(251, 247, 247);
+           border-radius: 3px;
+           margin-right: 10px;
+           background: transparent;
+           color: white;
+           caret-color: white;
+        }
+        .center h1 {
+           font-size: 3em;
+           font-weight: bolder;
+           margin-bottom: 20px;
+         }
+
+        .center h2 {
+           font-size: 1.5em;
+           font-weight: normal;
+           margin: 10px 0;
+           color: rgb(170, 168, 168);
+}
+    form button {
+        background: hsl(357, 98%, 50%);
+        border: none;
+        color: white;
+        font-size: 25px;
+        padding: 12px 20px;
+        cursor: pointer;
+       transition: 0.3s;
+   }
+   form button:hover {
+       background: #f62731;
+   }
+   .card{
+    float: left;
+    border: 1px solid;
+    width: 20%;
+    height: 250px;
+    background: rgb(19, 19, 33);
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 8px 12px;
+    flex: 1;
+    border-radius: 10px;   
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+
+.card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.9); ; 
+    background: rgb(28, 28, 50); 
+}
+
+.card:hover h1 {
+    color: #e50914; 
+}
+
+   .reasons{
+    margin-left: 60px;
+    flex-wrap: wrap;
+    gap: 20px;
+    display: flex;
+   }
+   .QA{
+    background-color: rgb(58, 59, 59);
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 3px;
+    margin:10px 20px;
+   }
+   .A{
+            display: none;
+            position:absolute;
+            background: rgb(50,50,50);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+          transition: all 0.6s ease-in-out;
+            margin: 0 20px 10px 20px;
+            max-height: 0;
+            overflow: scroll;
+            opacity: 0;
+
+   }
+   .QA:active + .A , .QA:hover{
+            display: block;
+            background-color: rgb(19, 19, 19);
+            transition: 0.3s;
+            max-height: 500px; 
+            opacity: 1;
+
+        }
+    .try, .trybutton{
+        font-size: 25px;
+        border: 1px solid white;
+        background: transparent;
+        padding:10px;
+        color: white;
+        caret-color: white;
+       
+    }
+    .try, .trybutton{
+        font-size: 25px;
+        border: 1px solid white;
+        background: transparent;
+        padding:10px;
+        color: white;
+        caret-color: white;
+       
+    }
+    .trybutton{
+        background-color: #f8020e;
+        color: rgb(251, 253, 254);
+        border: none;
+    }
+</style>
+</head>
+<body>
+<div class="backdim">
+<nav class="navbar">
+<h1 class="top">NETFLIX</h1>
+<ul class="right">
+<li>
+  <div class="dropdwn">
+    <button class="dropbtn">తెలుగు ▾</button>
+    <div class="dropcontnt">
+      <a href="login.html"><h3>English</h3></a>
+      <a href="loginhindi.html"><h3>Hindi</h3></a>
+    </div>
+  </div>
+</li>
+<li><a href="watching.html"><button class="sign">సైన్ ఇన్</button></a></li>
+</ul>
+</nav>
+
+<div class="center">
+<h1>అనంతమైన సినిమాలు, టివి</h1>
+<h1> మరియు మరిన్ని షోలు.</h1>
+<h2>₹149 నుండి ప్రారంభం. ఎప్పుడైనా రద్దు చేయండి.</h2>
+<h2>చూడటానికి ఇక్కడ మీ ఇమెయిల్‌ను నమోదు చేయండి.</h2>
+
+<form>
+    <input type="email" placeholder="ఇమెయిల్ చిరునామా" required>
+    <a href="watching.html"><button>ప్రారంభించండి > </button></a>
+</form>
+</div><br><br>
+
+<h1 style="padding-bottom: 3px;margin-left: 20px;">చేరడానికి మరిన్ని కారణాలు</h1>
+<div class="reasons">
+<div class="card">
+<h1>మీ టీవీలో ఆనందించండి</h1>
+<p>స్మార్ట్ టివీలు, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray ప్లేయర్ మరియు మరిన్ని చూసుకోండి.</p>
+</div>
+<div class="card">
+<h1>ఆఫ్‌లైన్‌లో చూడటానికి షోలను డౌన్‌లోడ్ చేయండి</h1>
+<p>మీ ఇష్టమైన షోలను సులభంగా సేవ్ చేయండి మరియు ఎల్లప్పుడూ చూడటానికి ఏదో ఉండాలి.</p>
+</div>
+<div class="card">
+<h1>ఏక్కడైనా చూడండి</h1>
+<p>మీ ఫోన్, టాబ్లెట్, ల్యాప్‌టాప్ మరియు టీవీపై అనంతమైన సినిమాలు మరియు టీవీ షోలను స్ట్రీమ్ చేయండి.</p>
+</div>
+<div class="card">
+<h1>పిల్లల కోసం ప్రొఫైల్‌లను సృష్టించండి</h1>
+<p>పిల్లలకు వారి ఇష్టమైన పాత్రలతో అనుభవాలను ఇవ్వండి.</p>
+</div>
+</div>
+
+<h1>తరచుగా అడిగే ప్రశ్నలు</h1>
+
+<div class="QA"><h2>Netflix అంటే ఏమిటి?</h2></div>
+<div class="A"><h4>Netflix అనేది అవార్డు విజేత టీవీ షోలు, సినిమాలు, యానిమే, డాక్యుమెంటరీలు మరియు మరిన్ని అందించే స్ట్రీమింగ్ సర్వీస్.</h4></div>
+
+<div class="QA"><h2>Netflix ఖర్చు ఎంత?</h2></div>
+<div class="A"><h4>₹149 నుండి ₹649 ప్రతి నెల. అదనపు ఖర్చులు లేవు.</h4></div>
+
+<div class="QA"><h2>నేను ఎక్కడ చూడవచ్చు?</h2></div>
+<div class="A"><h4>ఏదైనా ఇంటర్నెట్-కనెక్ట్ డివైస్‌లో ఎక్కడైనా చూడవచ్చు.</h4></div>
+
+<div class="QA"><h2>నేను దీన్ని రద్దు చేయగలనా?</h2></div>
+<div class="A"><h4>మీరు ఎప్పుడైనా ఆన్‌లైన్‌లో సులభంగా ఖాతాను రద్దు చేయవచ్చు. రద్దు ఫీజులు లేవు.</h4></div>
+
+<div class="QA"><h2>నేను ఏమి చూడగలను?</h2></div>
+<div class="A"><h4>Netflix లో సినిమాలు, డాక్యుమెంటరీలు, టీవీ షోలు, యానిమే మరియు Netflix Originals ఉన్నాయి.</h4></div>
+
+<div class="QA"><h2>Netflix పిల్లలకు సరైనదా?</h2></div>
+<div class="A"><h4>Netflix Kids ప్రొఫైల్స్ కుటుంబ అనుకూల కంటెంట్‌ను అందిస్తాయి.</h4></div>
+
+<br><br><center>
+<h3>చూడటానికి ఇక్కడ మీ ఇమెయిల్‌ను నమోదు చేయండి.</h3>
+<input class="try"  type="email" placeholder="ఇమెయిల్ చిరునామా" required>
+<a href="watching.html"><button class="trybutton">ప్రారంభించండి > </button></a>
+</center>
+<br><br>
+<h3>ప్రశ్నలు? కాల్ చేయండి 000-800-919-1743</h3>
+<center><h2>Netflix India</h2></center>
+<center><h5>ఈ పేజీ Google reCAPTCHA ద్వారా రక్షించబడింది.<a href="https://www.netflix.com/in/">మరింత తెలుసుకోండి</a></h5></center>
+</div>
+</body>
+</html>

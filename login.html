@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix India - Watch TV Shows</title>
+    <link rel="icon" href="icon.png">
+    <style>
+        body{
+            background-image: url("loginpage1.jpg");
+            background-repeat: no-repeat;
+            background-position: top;
+            margin:0;
+            background-size: cover;
+            background-position-x: center;
+            color: white;
+        }
+        .backdim{
+            background: rgba(33, 32, 32, 0.915);
+            min-height: 100vh;
+        }
+        .top{
+            color: red;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 40px; 
+            font-weight: bold;
+            letter-spacing: 2px;
+            float: left;
+            margin-left: 80px;
+        }
+        .navbar{
+              justify-content: space-between;
+              display: flex;
+              align-items: center;
+              padding: 20px 50px
+             position: fixed;
+             top: 0;
+             width: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+        }
+
+        .dropdwn{
+            position:relative;
+            display: inline-block;
+            font-size: 20px;
+        }
+        .dropbtn{
+            font-size: 16px;
+            padding: 8px 15px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+        .dropdwn:hover{
+            background: rgba(255,255,255,0.2);
+        }
+        .dropcontnt{
+            display: none;
+            position:absolute;
+            background: rgba(0,0,0,0.9);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .dropcontnt h3{
+            margin:5px 0px;
+            color: white;
+            font-size: 14px;
+            cursor:pointer
+        }
+        .dropdwn:hover .dropcontnt{
+            display: block;
+        }
+        .sign {
+            font-size: 16px;
+            padding: 8px 15px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .sign:hover {
+        background: red;
+        color: black;
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style-type: none;
+        }
+
+        .center {
+            text-align: center;
+            margin-top: 100px; 
+        }
+        .center input {
+            padding: 12px;
+            font-size: 25px;
+            width: 300px;
+            max-width: 90%;
+            border: 1px solid rgb(251, 247, 247);
+           border-radius: 3px;
+           margin-right: 10px;
+           background: transparent;
+           color: white;
+           caret-color: white;
+        }
+        .center h1 {
+           font-size: 3em;
+           font-weight: bolder;
+           margin-bottom: 20px;
+         }
+
+        .center h2 {
+           font-size: 1.5em;
+           font-weight: normal;
+           margin: 10px 0;
+           color: rgb(170, 168, 168);
+}
+    form button {
+        background: hsl(357, 98%, 50%);
+        border: none;
+        color: white;
+        font-size: 25px;
+        padding: 12px 20px;
+        cursor: pointer;
+       transition: 0.3s;
+   }
+   form button:hover {
+       background: #f62731;
+   }
+   .card{
+    float: left;
+    border: 1px solid;
+    width: 20%;
+    height: 250px;
+    background: rgb(19, 19, 33);
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 8px 12px;
+    flex: 1;
+    border-radius: 10px;   
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+
+.card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.9); ; 
+    background: rgb(28, 28, 50); 
+}
+
+.card:hover h1 {
+    color: #e50914; 
+}
+
+   .reasons{
+    margin-left: 60px;
+    flex-wrap: wrap;
+    gap: 20px;
+    display: flex;
+   }
+   .QA{
+    background-color: rgb(58, 59, 59);
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 3px;
+    margin:10px 20px;
+   }
+   .A{
+            display: none;
+            position:absolute;
+            background: rgb(50,50,50);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+          transition: all 0.6s ease-in-out;
+            margin: 0 20px 10px 20px;
+            max-height: 0;
+            overflow: scroll;
+            opacity: 0;
+
+   }
+   .QA:active + .A , .QA:hover{
+            display: block;
+            background-color: rgb(19, 19, 19);
+            transition: 0.3s;
+            max-height: 500px; 
+            opacity: 1;
+
+        }
+    .try, .trybutton{
+        font-size: 25px;
+        border: 1px solid white;
+        background: transparent;
+        padding:10px;
+        color: white;
+        caret-color: white;
+       
+    }
+    .trybutton{
+        background-color: #f8020e;
+        color: rgb(251, 253, 254);
+        border: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="backdim">
+<nav class="navbar">
+  <h1 class="top">NETFLIX</h1>
+  <ul class="right">
+    <li>
+      <div class="dropdwn">
+        <button class="dropbtn">English ▾</button>
+        <div class="dropcontnt">
+          <a href="loginhindi.html"><h3>Hindi</h3></a>  
+          <a href="logintelugu.html"><h3>Telugu</h3></a>
+        </div>
+      </div>
+    </li>
+    <li><a href="watching.html"><button class="sign">Sign In</button></a></li>
+  </ul>
+</nav>
+<div class="center">
+<h1>Unlimited Movies, TV</h1>
+<h1> Shows and more.</h1>
+<h2>Starts at 149.Cancel at Anytime.</h2>
+<h2>Ready to watch? Enter your email to create or restart your membership.</h2>
+
+<form>
+    <input type="email" placeholder="Email address" required>
+    <a href="watching.html"><button>Get Started > </button></a> 
+</form>
+</div><br><br>
+
+<h1 style="padding-bottom: 3px;margin-left: 20px;">More reasons to join</h1><div class="reasons">
+<div class="card">
+    <h1>Enjoy on your TV</h1>
+    <P>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</P>
+</div>
+<div class="card">
+    <h1>Download your shows to watch offline</h1>
+    <P>Save your favourites easily and always have something to watch.</P>
+</div>
+<div class="card">
+    <h1>Watch everywhere</h1>
+    <P>Stream unlimited movies and TV shows on your phone, tablet, laptop and TV.</P>
+</div>
+<div class="card">
+    <h1>Create profiles for kids</h1>
+    <P>Send kids on adventures with their favourite characters in a space made just for them — free with your membership.</P>
+</div></div>
+<br><br>
+<h1>Frequently asked Questions</h1>
+<div class="QA"><h2>What is Netflix?</h2></div>
+<div class="A">
+  <h4>
+    Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.<br><br>
+    You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!
+  </h4>
+</div>
+
+<div class="QA"><h2>How much does Netflix cost?</h2></div>
+<div class="A">
+  <h4>
+   Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from ₹149 to ₹649 a month. No extra costs, no contracts.
+  </h4>
+</div>
+
+<div class="QA"><h2>Where can I watch?</h2></div>
+<div class="A">
+  <h4>
+   Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.<br><br>
+   You can also download your favourite shows with the iOS or Android app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.
+  </h4>
+</div>
+
+<div class="QA"><h2>How do I cancel?</h2></div>
+<div class="A">
+  <h4>
+   Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.
+  </h4>
+</div>
+
+<div class="QA"><h2>What can I watch?</h2></div>
+<div class="A">
+  <h4>
+   Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.
+  </h4>
+</div>
+
+<div class="QA"><h2>Is Netflix good for kids?</h2></div>
+<div class="A">
+  <h4>
+  The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and films in their own space.<br><br>
+  Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.
+  </h4>
+</div>
+<br><br><center>
+<h3>Ready to Watch? Enter your Email to create or restart your membership.</h3><form></form>
+<input class="try"  type="email" placeholder="Email Address" required>
+<a href="watching.html"><button class="trybutton">Get Started > </button></a></form>
+</center>
+<br><br>
+<h3>Questions? Call 000-800-919-1743</h3>
+<br>
+<center><h2>Netflix India</h2></center>
+<center><h5>This page is protected by Google reCAPTCHA to ensure you're not a bot.<a href="https://www.netflix.com/in/">Learn more.</a> </h5></center>
+</body>
+</html>
+
+
+

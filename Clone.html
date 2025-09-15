@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Netflix</title>
+    <link rel="icon" href="icon.png">
+    <style>
+body {
+    margin: 0;
+    background: rgb(16, 15, 15);
+    font-family: Arial, sans-serif;   
+    color: white;
+    padding-top: 70px;
+}
+.navbar {
+    background: black;
+    position: fixed;  
+    top: 0;
+    left: 0;
+    width: 100%;     
+    z-index: 1000;    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 60px;
+}
+.navbar h1 {
+    color: red;
+    margin: 0;
+    font-size: 28px;
+    cursor: pointer;
+}
+.navbar ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.navbar li {
+    list-style-type: none;
+    margin-left: 20px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+.rightnav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 50px;
+}
+.kids {
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+.dropcontnt {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(216, 216, 216, 0.95);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    min-width: 180px;
+    box-shadow: 0 4px 15px rgba(27, 26, 26, 0.6); 
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.dropcontnt h3 {
+    margin: 8px 0;
+    padding: 6px 10px;
+    color: white;
+    border-radius: 3px;
+    transition: background 0.2s;
+}
+.dropcontnt h3:hover {
+    background: rgba(255,255,255,0.1);
+}
+.navbar li:hover .dropcontnt {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+#butn {
+    background: rgb(253, 253, 253);
+    border: none;
+    padding: 12px 24px;
+    margin: 15px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    float: right;
+    color: black;
+
+}
+#butn:hover {
+    background: rgba(255,255,255,0.8);
+}
+.line ul{
+    display: flex;
+    gap: 20px;             
+    overflow-x: auto;      
+    list-style: none;     
+    padding: 0;
+    margin: 0;
+    scrollbar-width: none;
+}
+.line ul::-webkit-scrollbar,
+.topshows::-webkit-scrollbar {
+    display: none;  
+}
+.line ul li{
+    flex: 0 0 auto;      
+    text-align: center;  
+    font-size: 16px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+.line ul li img{
+    display: block;  
+    width: 240px;      
+    border-radius: 8px;
+    margin-bottom: 8px; 
+    height: auto;   
+    transition: transform 0.3s ease; 
+}
+.line img:hover{
+    transform: scale(1.25); 
+    z-index: 10;
+}
+ .line ul li:hover{
+
+    z-index: 10;      
+}
+.topshows {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+}
+.show {
+    display: flex;
+    align-items: center;
+    gap: 10px;  
+}
+.show img {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+.rank {
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke: 2px black; 
+}
+.last {
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+    color: gray;
+}
+.last ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0 0 20px 0;
+    list-style: none;
+}
+.last ul li {
+    cursor: pointer;
+}
+.last ul li:hover {
+    text-decoration: underline;
+}
+
+.squid{
+    text-align: center;
+    margin-left: 900px;
+    margin-top: -80px;
+}
+
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>NETFLIX</h1>
+        <ul >
+            <li>Home</li> 
+            <li>TV Shows</li>
+            <li>Movies</li>
+            <li>Games</li>
+            <li>News & Populars</li>
+            <li>My List</li>
+            <li>Browse by Languages</li>
+            <div class="rightnav">
+                <li>🔎</li>
+                <li>Children</li>    
+                <li>🔔</li>            
+                <li style="float:right; position: relative;"><img class="kids" src="profile.jpg">  ▾
+                <div class="dropcontnt">
+                       <a href="watching.html"><h3>Manage Profile</h3></a>  
+                       <a href="watching.html"><h3>Transfer Profile</h3></a>
+                       <h3>Account</h3>
+                       <h3>Help Center</h3>
+                       <h3>Sign Out</h3>
+                </div></li>
+            </div>
+        </ul>
+    </nav>
+    <div class="cont1">
+
+<img  src="home_files/main.jpg" width="100%">
+    <div class="onpic"><button id="butn">More Info</button>
+    <button id="butn">▶️Play</button></div> 
+
+
+</div>
+<div class="squid"><h2>SQUID GAME : E1 ONE LUCKY DAY</h2></div><br>
+<div class="line">
+    <h2 style="color: white;padding: 10px;">WWE: Live and Upcoming</h2>
+    <ul>
+        <li><img src="home_files/a.webp" > September 15, 2025</li>
+        <li><img src="home_files/aa.webp" > NXT Homecoming 2025</li>
+        <li><img src="home_files/aaa.webp" > September 19, 2025</li>
+        <li><img src="home_files/b.webp" > Wrestelpaleezo</li>
+        <li><img src="home_files/bb.jpg" >September 22, 2025 </li>
+        <li><img src="home_files/bbb.webp" >September 23, 2025 </li>
+        <li><img src="home_files/c.jpg"> September 25, 2025</li>
+        <li><img src="home_files/cc.jpg"> September 30, 2025 </li>
+    </ul>
+</div>
+<br><br>
+<h2 style="color: white;padding: 10px;">Top 10 TV Shows in India Today</h2>
+<div class="topshows">
+    <div class="show">
+        <span class="rank">1</span>
+        <img src="home_files/zz.webp" alt="show1">
+    </div>
+    <div class="show">
+        <span class="rank">2</span>
+        <img src="home_files/z.jpg" alt="show2">
+    </div>
+    <div class="show">
+        <span class="rank">3</span>
+        <img src="home_files/yy.jpg" alt="show3">
+    </div>
+    <div class="show">
+        <span class="rank">4</span>
+        <img src="home_files/y.jpg" alt="show3">
+    </div>
+    <div class="show">
+        <span class="rank">5</span>
+        <img src="home_files/xx.jpg" alt="show3">
+    </div>
+    <div class="show">
+        <span class="rank">6</span>
+        <img src="home_files/x.jpg" alt="show3">
+    </div>
+    <div class="show">
+        <span class="rank">7</span>
+        <img src="home_files/ww.jpg" alt="show3">
+    </div>
+    <div class="show">
+        <span class="rank">8</span>
+        <img src="home_files/w.webp" alt="show3">
+    </div>
+    <div class="show">
+        <span class="rank">9</span>
+        <img src="home_files/vv.webp" alt="show3">
+    </div>
+    <div class="show">
+        <span class="rank">10</span>
+        <img src="home_files/v.webp" alt="show3">
+    </div>
+</div>
+<br><br>
+<div class="line">
+    <h2 style="color: white;padding: 10px;">Movie Night with Friends</h2>
+    <ul>
+        <li><img src="home_files/ccc.jpg" > Mirai</li>
+        <li><img src="home_files/d.jpg" > Mandala Murders</li>
+        <li><img src="home_files/dd.jpg" > All of us are dead</li>
+        <li><img src="home_files/ddd.jpg" >Little Hearts</li>
+        <li><img src="home_files/e.jpg" >My Demon </li>
+        <li><img src="home_files/ee.jpg" >Weak Hero</li>
+        <li><img src="home_files/eee.jpg"> Wednesday</li>
+        <li><img src="home_files/f.jpg"> Coolie</li>
+    </ul>
+</div>
+<br><br>
+<div class="line">
+    <h2 style="color: white;padding: 10px;">Break time? Have a Screen Snack</h2>
+    <ul>
+        <li><img src="home_files/ff.webp" > Mirai</li>
+        <li><img src="home_files/f.jpg" > Mandala Murders</li>
+        <li><img src="home_files/fff.jpg" > All of us are dead</li>
+        <li><img src="home_files/g.jpg" >Little Hearts</li>
+        <li><img src="home_files/gg.webp" >My Demon </li>
+        <li><img src="home_files/ggg.jpg" >Weak Hero</li>
+        <li><img src="home_files/hh.jpg"> Wednesday</li>
+        <li><img src="home_files/h.webp"> Coolie</li>
+    </ul>
+<br><br>
+    <div class="line">
+    <h2 style="color: white;padding: 10px;">Exciting US TV Sci-Fi Fantasy</h2>
+    <ul>
+        <li><img src="home_files/hh.jpg" > Mirai</li>
+        <li><img src="home_files/i.jpg" > Mandala Murders</li>
+        <li><img src="home_files/ii.jpg" > All of us are dead</li>
+        <li><img src="home_files/jj.jpg" >Little Hearts</li>
+        <li><img src="home_files/k.webp" >My Demon </li>
+        <li><img src="home_files/kk.webp" >Weak Hero</li>
+        <li><img src="home_files/l.webp"> Wednesday</li>
+        <li><img src="home_files/ll.webp"> Coolie</li>
+    </ul>
+</div>
+<br><br>
+    <div class="line">
+    <h2 style="color: white;padding: 10px;padding: 10px;">Thrillers & Horror Movies</h2>
+    <ul>
+        <li><img src="home_files/m.jpg" > Mirai</li>
+        <li><img src="home_files/q.jpg" > Mandala Murders</li>
+        <li><img src="home_files/n.webp" > All of us are dead</li>
+        <li><img src="home_files/nn.jpg" >Little Hearts</li>
+        <li><img src="home_files/o.webp" >My Demon </li>
+        <li><img src="home_files/oo.jpg" >Weak Hero</li>
+        <li><img src="home_files/p.jpg"> Wednesday</li>
+        <li><img src="home_files/pp.webp"> Coolie</li>
+    </ul>
+</div>
+<br><br>
+    <div class="line">
+    <h2 style="color: white;padding: 10px;">We Think You'll Love These</h2>
+    <ul>
+        <li><img src="home_files/qqq.jpg" > Mirai</li>
+        <li><img src="home_files/r.webp" > Mandala Murders</li>
+        <li><img src="home_files/rr.jpg" > All of us are dead</li>
+        <li><img src="home_files/s.webp" >Little Hearts</li>
+        <li><img src="home_files/ss.webp" >My Demon </li>
+        <li><img src="home_files/t.jpg" >Weak Hero</li>
+        <li><img src="home_files/tt.jpg"> Wednesday</li>
+        <li><img src="home_files/u.webp"> Coolie</li>
+    </ul>
+</div>
+<br><br>
+    <div class="line">
+    <h2 style="color: white;padding: 10px;">We Think You'll Love These</h2>
+    <ul>
+        <li><img src="home_files/uu.jpg" > Mirai</li>
+        <li><img src="home_files/u.webp" > Mandala Murders</li>
+        <li><img src="home_files/v.webp" > All of us are dead</li>
+        <li><img src="home_files/vv.webp" >Little Hearts</li>
+        <li><img src="home_files/w.webp" >My Demon </li>
+        <li><img src="home_files/ww.jpg" >Weak Hero</li>
+        <li><img src="home_files/x.jpg"> Wednesday</li>
+        <li><img src="home_files/xx.jpg"> Coolie</li>
+    </ul>
+</div>
+<br><br><br><br><hr>
+<div class="last">
+<ul>
+    <li>Audio Description</li>
+    <li>Help Center</li>
+    <li>Gift Cards</li>
+    <li>Media Center</li>
+    <li>Investor Relations</li>
+    <li>Jobs</li>
+    <li>Terms of Use</li>
+    <li>Privacy</li>
+    <li>Legal Notices</li>
+    <li>Cookie Preferences</li>
+    <li>Corporate Information</li>
+    <li>Contact Information</li>
+</ul><br>
+<h5>1997-2025 Netflix, Inc. </h5></div>
+</body>
+</html>
+
