@@ -43,6 +43,7 @@ body {
     color: white;
     font-size: 14px;
     cursor: pointer;
+    position: relative;
 }
 .rightnav {
     display: flex;
@@ -60,16 +61,14 @@ body {
     display: none;
     position: absolute;
     top: 100%;
-    right: 0;
+    right: -30px;
     background: rgba(216, 216, 216, 0.95);
     padding: 10px;
     border-radius: 5px;
     font-size: 14px;
-    min-width: 180px;
+    min-width: 200px;
     box-shadow: 0 4px 15px rgba(27, 26, 26, 0.6); 
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2000;
 }
 .dropcontnt h3 {
     margin: 8px 0;
@@ -87,8 +86,6 @@ body {
 }
 .navbar li:hover .dropcontnt {
     display: block;
-    opacity: 1;
-    transform: translateY(0);
 }
 #butn {
     background: rgb(253, 253, 253);
